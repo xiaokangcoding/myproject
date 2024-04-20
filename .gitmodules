@@ -1,0 +1,3 @@
+[submodule "我的项目"]
+	path = 我的项目
+	url = git@github.com:xiaokangcoding/Miniftpd.git
