@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package greeter;
+
+//option go_package = "github.com/Henry-jk/go-microservice-study/greeter";
+option go_package = "/srv/proto;greeter"; // 该文件是放在最外面的greeter目录下 生成的pb.go 和 pb.micro.go 文件
+
+service Say {
+    rpc Hello(Request) returns (Response) {}
+}
+
+message Request {
+    string name = 1;
+}
+
+message Response {
+    string msg = 1;
+}
