@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node94" [ label="protobuf_rpc_echo_client" shape="house"];
+}

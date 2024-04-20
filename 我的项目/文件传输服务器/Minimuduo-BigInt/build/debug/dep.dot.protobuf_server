@@ -1,0 +1,24 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node87" [ label="protobuf_server" shape="house"];
+    "node82" [ label="protobuf_codec" shape="diamond"];
+    "node87" -> "node82" // protobuf_server -> protobuf_codec
+    "node118" [ label="protobuf" shape="ellipse"];
+    "node82" -> "node118" // protobuf_codec -> protobuf
+    "node8" [ label="muduo_net" shape="diamond"];
+    "node82" -> "node8" // protobuf_codec -> muduo_net
+    "node0" [ label="muduo_base" shape="diamond"];
+    "node8" -> "node0" // muduo_net -> muduo_base
+    "node113" [ label="pthread" shape="ellipse"];
+    "node0" -> "node113" // muduo_base -> pthread
+    "node114" [ label="rt" shape="ellipse"];
+    "node0" -> "node114" // muduo_base -> rt
+    "node119" [ label="z" shape="ellipse"];
+    "node82" -> "node119" // protobuf_codec -> z
+    "node88" [ label="query_proto" shape="diamond"];
+    "node87" -> "node88" // protobuf_server -> query_proto
+    "node88" -> "node118" // query_proto -> protobuf
+    "node88" -> "node113" // query_proto -> pthread
+}

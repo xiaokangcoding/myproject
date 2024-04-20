@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node72" [ label="wordcount_hasher" shape="house"];
+}

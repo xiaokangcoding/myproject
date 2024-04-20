@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node5" [ label="exception_test" shape="house"];
+}

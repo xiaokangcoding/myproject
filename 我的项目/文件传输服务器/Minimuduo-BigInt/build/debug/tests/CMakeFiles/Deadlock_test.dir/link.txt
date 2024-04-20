@@ -1,0 +1,1 @@
+g++   -g -D_FILE_OFFSET_BITS=64 -Wall -Wextra -Wconversion -Wno-unused-parameter -Wold-style-cast -Woverloaded-virtual -Wpointer-arith -Wshadow -Wwrite-strings -march=native -rdynamic -O0    CMakeFiles/Deadlock_test.dir/Deadlock_test.cc.o  -o ../bin/Deadlock_test -rdynamic -lpthread 

@@ -1,0 +1,10 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node93" [ label="echo_proto" shape="diamond"];
+    "node118" [ label="protobuf" shape="ellipse"];
+    "node93" -> "node118" // echo_proto -> protobuf
+    "node113" [ label="pthread" shape="ellipse"];
+    "node93" -> "node113" // echo_proto -> pthread
+}

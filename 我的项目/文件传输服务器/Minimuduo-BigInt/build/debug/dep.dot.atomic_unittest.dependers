@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node2" [ label="atomic_unittest" shape="house"];
+}

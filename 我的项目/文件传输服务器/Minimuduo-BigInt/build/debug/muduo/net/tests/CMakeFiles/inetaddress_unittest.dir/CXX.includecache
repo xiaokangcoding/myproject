@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/root/muduo/03/jmuduo/muduo/base/StringPiece.h
+string.h
+-
+iosfwd
+-
+muduo/base/Types.h
+-
+string
+-
+
+/root/muduo/03/jmuduo/muduo/base/Types.h
+stdint.h
+-
+string
+-
+ext/vstring.h
+-
+ext/vstring_fwd.h
+-
+
+/root/muduo/03/jmuduo/muduo/base/copyable.h
+
+/root/muduo/03/jmuduo/muduo/net/InetAddress.h
+muduo/base/copyable.h
+-
+muduo/base/StringPiece.h
+-
+netinet/in.h
+-
+
+/root/muduo/03/jmuduo/muduo/net/tests/InetAddress_unittest.cc
+muduo/net/InetAddress.h
+-
+boost/test/unit_test.hpp
+-
+

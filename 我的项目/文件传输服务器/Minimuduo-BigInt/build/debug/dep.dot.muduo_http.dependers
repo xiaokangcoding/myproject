@@ -1,0 +1,24 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node11" [ label="muduo_http" shape="diamond"];
+    "node9" [ label="httprequest_unittest" shape="house"];
+    "node9" -> "node11" // muduo_http -> httprequest_unittest
+    "node10" [ label="httpserver_test" shape="house"];
+    "node10" -> "node11" // muduo_http -> httpserver_test
+    "node15" [ label="muduo_inspect" shape="diamond"];
+    "node15" -> "node11" // muduo_http -> muduo_inspect
+    "node32" [ label="hub" shape="house"];
+    "node32" -> "node15" // muduo_inspect -> hub
+    "node14" [ label="inspector_test" shape="house"];
+    "node14" -> "node15" // muduo_inspect -> inspector_test
+    "node33" [ label="muduo_pubsub" shape="diamond"];
+    "node33" -> "node15" // muduo_inspect -> muduo_pubsub
+    "node34" [ label="pub" shape="house"];
+    "node34" -> "node33" // muduo_pubsub -> pub
+    "node35" [ label="sub" shape="house"];
+    "node35" -> "node33" // muduo_pubsub -> sub
+    "node51" [ label="shorturl" shape="house"];
+    "node51" -> "node11" // muduo_http -> shorturl
+}

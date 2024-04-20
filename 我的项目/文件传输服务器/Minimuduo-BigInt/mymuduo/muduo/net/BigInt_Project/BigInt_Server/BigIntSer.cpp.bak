@@ -1,0 +1,169 @@
+#include<iostream>
+#include"./BigInt/BigInt.h"
+#include<stdio.h>
+#include <string>
+#include <sstream>
+using namespace std;
+
+typedef enum {ADD,SUB,MUL,DIV,MOD,SQU} OPER;
+void Html_Header()
+{
+	printf("Content-Type:text/html;charset=utf-8;\n\n");
+	printf("<title>BigInt Calcutate!</title>");
+	printf("<h1 align=center>Welcome to BigInt Cal!</h1>");
+}
+#if 1
+void Data_Handler(BigInt &bt,BigInt &bt1,BigInt &bt2,OPER &oper)
+{
+
+	bt.clear();
+	bt1.clear();
+	bt2.clear();
+	int len=atoi(getenv("CONTENT_LENGTH"));
+	char *p=(char *)malloc(len+1);
+	//m=123&n=234&CMD=+
+	fgets(p,len+1,stdin);
+	//sscanf(p,"m=%[^&]&n=%[^&]",bt1,bt2)
+	while(*p!='\0' && *p!='&')
+	{
+		if(*p>='0'&&*p<='9')
+			bt1.push_front(*p-'0');
+		p++;
+	}
+	p++;
+	while(*p!='\0'&& *p!='&')
+	{
+		if(*p>='0' && *p<='9')
+			bt2.push_front(*p-'0');
+		p++;
+	}
+	p++;
+	char *cmd=(char*)malloc(5);
+	sscanf(p,"CMD=%s",cmd);
+	cout<<p<<endl;
+	//CMD=%2B
+	//CMD=-
+	if(cmd[0]=='%')
+	{
+		string s=cmd+1;
+		stringstream ss(s);
+		int val;
+		ss>>std::hex>>val;
+		char tmp;
+		tmp=static_cast<char>(val);
+
+		if(tmp=='+')
+			oper=ADD;
+		else if(tmp=='/')
+			oper=DIV;
+		else if(tmp=='%')
+			oper=MOD;
+	}
+	if(strcmp(cmd,"-")==0)
+		oper=SUB;
+	else if(strcmp(cmd,"*")==0)
+		oper=MUL;
+
+#endif
+#if 0
+	void Data_Handler(BigInt &bt,BigInt &bt1,BigInt &bt2,OPER &oper)
+	{
+		bt.clear();
+		bt1.clear();
+		bt2.clear();
+		char *p=getenv("QUERY_STRING");
+		if(p==NULL)
+		{
+			printf("<p>获取数据错误</p>");
+		}
+		else
+		{
+			while(*p!='\0' && *p!='&')
+			{
+				if(*p>='0'&&*p<='9')
+					bt1.push_front(*p-'0');
+				p++;
+			}
+			p++;
+			while(*p!='\0'&& *p!='&')
+			{
+				if(*p>='0' && *p<='9')
+					bt2.push_front(*p-'0');
+				p++;
+			}
+
+			p++;
+			char buf[10];
+			sscanf(p,"CMD= %s",buf);
+			if(strcmp(buf,"+")==0)
+			{
+				oper=ADD;
+			}
+			else if(strcmp(buf,"-")==0)
+			{
+				oper=SUB;
+			}
+			else if(strcmp(buf,"*")==0)
+			{
+				oper=MUL;
+			}
+			else if(strcmp(buf,"/")==0)
+			{
+				oper=DIV;
+			}
+			else if(strcmp(buf,"%")==0)
+			{
+				oper=MOD;
+			}
+		}
+#endif
+		if(oper==ADD)
+			bt=bt1+bt2;
+		else if(oper==SUB)
+			bt=bt1-bt2;
+		else if(oper==MUL)
+			bt=bt1*bt2;
+		else if(oper==DIV)
+			bt=bt1/bt2;
+		else if(oper==MOD)
+			bt=bt1%bt2;
+	}
+	void Show_Result(const BigInt &bt,const BigInt &bt1,const BigInt &bt2,OPER oper)
+	{
+		printf("<br>");
+		printf("<div style='word-wrap:break-word;font-size:30px;font-weight:blod;'align=center> bt1=");
+		int i=bt1.size();
+		for(;i>=1;--i)
+			printf("%d",(int)bt1[i]);
+		printf("<br>");
+		if(oper==ADD)
+			printf("+<br>");
+		else if(oper==SUB)
+			printf("-<br>");
+		else if(oper==MUL)
+			printf("*<br>");
+		else if(oper==DIV)
+			printf("/<br>");
+		else if(oper==MOD)
+			printf("%<br>");
+		printf("bt2=");
+		i=bt2.size();
+		for(;i>=1;i--)
+			printf("%d",(int)bt2[i]);
+		printf("<br>");
+		printf("||<br>");
+		i=bt.size();
+		for(;i>=1;--i)
+			printf("%d",(int)bt[i]);
+		printf("</div>");
+	}
+	int main(int argc,char *argv[])
+	{
+		Html_Header();
+		OPER oper;
+		BigInt bt,bt1,bt2;
+		Data_Handler(bt,bt1,bt2,oper);
+
+		Show_Result(bt,bt1,bt2,oper);
+		return 0;
+	}

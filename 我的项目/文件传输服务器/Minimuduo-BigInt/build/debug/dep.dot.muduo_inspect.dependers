@@ -1,0 +1,16 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node15" [ label="muduo_inspect" shape="diamond"];
+    "node32" [ label="hub" shape="house"];
+    "node32" -> "node15" // muduo_inspect -> hub
+    "node14" [ label="inspector_test" shape="house"];
+    "node14" -> "node15" // muduo_inspect -> inspector_test
+    "node33" [ label="muduo_pubsub" shape="diamond"];
+    "node33" -> "node15" // muduo_inspect -> muduo_pubsub
+    "node34" [ label="pub" shape="house"];
+    "node34" -> "node33" // muduo_pubsub -> pub
+    "node35" [ label="sub" shape="house"];
+    "node35" -> "node33" // muduo_pubsub -> sub
+}

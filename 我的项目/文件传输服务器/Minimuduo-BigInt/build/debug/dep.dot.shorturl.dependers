@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node51" [ label="shorturl" shape="house"];
+}

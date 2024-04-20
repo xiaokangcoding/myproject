@@ -1,0 +1,10 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node77" [ label="muduo_cdns" shape="diamond"];
+    "node76" [ label="cdns" shape="house"];
+    "node76" -> "node77" // muduo_cdns -> cdns
+    "node97" [ label="protobuf_rpc_resolver_server" shape="house"];
+    "node97" -> "node77" // muduo_cdns -> protobuf_rpc_resolver_server
+}

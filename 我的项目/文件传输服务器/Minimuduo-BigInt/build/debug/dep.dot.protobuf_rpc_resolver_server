@@ -1,0 +1,25 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node97" [ label="protobuf_rpc_resolver_server" shape="house"];
+    "node98" [ label="resolver_proto" shape="diamond"];
+    "node97" -> "node98" // protobuf_rpc_resolver_server -> resolver_proto
+    "node118" [ label="protobuf" shape="ellipse"];
+    "node98" -> "node118" // resolver_proto -> protobuf
+    "node113" [ label="pthread" shape="ellipse"];
+    "node98" -> "node113" // resolver_proto -> pthread
+    "node120" [ label="muduo_protorpc" shape="ellipse"];
+    "node97" -> "node120" // protobuf_rpc_resolver_server -> muduo_protorpc
+    "node77" [ label="muduo_cdns" shape="diamond"];
+    "node97" -> "node77" // protobuf_rpc_resolver_server -> muduo_cdns
+    "node8" [ label="muduo_net" shape="diamond"];
+    "node77" -> "node8" // muduo_cdns -> muduo_net
+    "node0" [ label="muduo_base" shape="diamond"];
+    "node8" -> "node0" // muduo_net -> muduo_base
+    "node0" -> "node113" // muduo_base -> pthread
+    "node114" [ label="rt" shape="ellipse"];
+    "node0" -> "node114" // muduo_base -> rt
+    "node116" [ label="cares" shape="ellipse"];
+    "node77" -> "node116" // muduo_cdns -> cares
+}

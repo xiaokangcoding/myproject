@@ -1,0 +1,16 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node51" [ label="shorturl" shape="house"];
+    "node11" [ label="muduo_http" shape="diamond"];
+    "node51" -> "node11" // shorturl -> muduo_http
+    "node8" [ label="muduo_net" shape="diamond"];
+    "node11" -> "node8" // muduo_http -> muduo_net
+    "node0" [ label="muduo_base" shape="diamond"];
+    "node8" -> "node0" // muduo_net -> muduo_base
+    "node113" [ label="pthread" shape="ellipse"];
+    "node0" -> "node113" // muduo_base -> pthread
+    "node114" [ label="rt" shape="ellipse"];
+    "node0" -> "node114" // muduo_base -> rt
+}

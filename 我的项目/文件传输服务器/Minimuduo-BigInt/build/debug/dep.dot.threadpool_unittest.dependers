@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node6" [ label="threadpool_unittest" shape="house"];
+}

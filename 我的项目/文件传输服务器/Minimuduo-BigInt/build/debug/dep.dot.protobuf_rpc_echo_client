@@ -1,0 +1,14 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node94" [ label="protobuf_rpc_echo_client" shape="house"];
+    "node93" [ label="echo_proto" shape="diamond"];
+    "node94" -> "node93" // protobuf_rpc_echo_client -> echo_proto
+    "node118" [ label="protobuf" shape="ellipse"];
+    "node93" -> "node118" // echo_proto -> protobuf
+    "node113" [ label="pthread" shape="ellipse"];
+    "node93" -> "node113" // echo_proto -> pthread
+    "node120" [ label="muduo_protorpc" shape="ellipse"];
+    "node94" -> "node120" // protobuf_rpc_echo_client -> muduo_protorpc
+}

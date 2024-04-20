@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node64" [ label="sudoku_solver_threadpool" shape="house"];
+}

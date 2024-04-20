@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node62" [ label="sudoku_solver_basic" shape="house"];
+}

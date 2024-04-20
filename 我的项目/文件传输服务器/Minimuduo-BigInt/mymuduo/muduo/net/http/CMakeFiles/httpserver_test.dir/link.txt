@@ -1,0 +1,1 @@
+/usr/bin/c++       CMakeFiles/httpserver_test.dir/tests/HttpServer_test.o  -o httpserver_test  -L/root/muduo/03/jmuduo/muduo/net/http -rdynamic libmuduo_http.a -lmuduo_net 

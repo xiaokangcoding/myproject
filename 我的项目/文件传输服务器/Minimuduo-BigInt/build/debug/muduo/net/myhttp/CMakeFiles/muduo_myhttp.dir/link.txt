@@ -1,0 +1,2 @@
+/usr/bin/ar cr ../../../lib/libmuduo_myhttp.a  CMakeFiles/muduo_myhttp.dir/HttpContext.cpp.o CMakeFiles/muduo_myhttp.dir/HttpRequest.cpp.o CMakeFiles/muduo_myhttp.dir/HttpResponse.cpp.o CMakeFiles/muduo_myhttp.dir/HttpServer.cpp.o CMakeFiles/muduo_myhttp.dir/Util.cpp.o
+/usr/bin/ranlib ../../../lib/libmuduo_myhttp.a

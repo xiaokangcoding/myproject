@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node59" [ label="simple_timeclient" shape="house"];
+}

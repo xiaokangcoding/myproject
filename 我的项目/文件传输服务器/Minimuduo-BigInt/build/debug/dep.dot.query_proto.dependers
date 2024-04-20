@@ -1,0 +1,16 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node88" [ label="query_proto" shape="diamond"];
+    "node81" [ label="protobuf_client" shape="house"];
+    "node81" -> "node88" // query_proto -> protobuf_client
+    "node84" [ label="protobuf_codec_test" shape="house"];
+    "node84" -> "node88" // query_proto -> protobuf_codec_test
+    "node85" [ label="protobuf_dispatcher_lite_test" shape="house"];
+    "node85" -> "node88" // query_proto -> protobuf_dispatcher_lite_test
+    "node86" [ label="protobuf_dispatcher_test" shape="house"];
+    "node86" -> "node88" // query_proto -> protobuf_dispatcher_test
+    "node87" [ label="protobuf_server" shape="house"];
+    "node87" -> "node88" // query_proto -> protobuf_server
+}

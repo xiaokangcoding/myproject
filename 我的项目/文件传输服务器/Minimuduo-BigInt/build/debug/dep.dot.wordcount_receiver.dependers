@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node73" [ label="wordcount_receiver" shape="house"];
+}

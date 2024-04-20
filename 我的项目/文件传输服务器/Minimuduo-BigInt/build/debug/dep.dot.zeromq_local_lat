@@ -1,0 +1,14 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node74" [ label="zeromq_local_lat" shape="house"];
+    "node8" [ label="muduo_net" shape="diamond"];
+    "node74" -> "node8" // zeromq_local_lat -> muduo_net
+    "node0" [ label="muduo_base" shape="diamond"];
+    "node8" -> "node0" // muduo_net -> muduo_base
+    "node113" [ label="pthread" shape="ellipse"];
+    "node0" -> "node113" // muduo_base -> pthread
+    "node114" [ label="rt" shape="ellipse"];
+    "node0" -> "node114" // muduo_base -> rt
+}

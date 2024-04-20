@@ -1,0 +1,6 @@
+digraph GG {
+node [
+  fontsize = "12"
+];
+    "node37" [ label="idleconnection_echo2" shape="house"];
+}
